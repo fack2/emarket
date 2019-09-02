@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "concurrently": "^4.1.2"
+    "concurrently": "^4.1.2",
+    "env2": "^2.2.2",
+    "fs": "0.0.1-security",
+    "pg": "^7.12.1"
   },
   "devDependencies": {
     "eslint": "^6.3.0",
@@ -17,7 +20,7 @@
     "server": "nodemon src/server.js",
     "start": "node src/server.js",
     "eslint": "./node_modules/.bin/eslint src/*/*",
-    "client":"cd client && npm start",
+    "client": "cd client && npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
