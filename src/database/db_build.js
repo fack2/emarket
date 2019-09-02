@@ -1,25 +1,20 @@
 const fs = require('fs');
+const path = require('path');
 
 const dbConnection = require('./db_connection');
 
-const sql = fs.readFileSync(`${__dirname}/db_build.sql`).toString();
-const sql2 = fs.readFileSync(`${__dirname}/initValue.sql`).toString();
+const sql = fs.readFileSync(path.join(__dirname, 'db_build.sql')).toString();
+const sql2 = fs.readFileSync(path.join(__dirname, 'initValue.sql')).toString();
 
-const runDbBuild = (cb) => dbConnection.query(sql, cb);
+const runDbBuild = (sql, cb) => dbConnection.query(sql, cb);
 
-const runDbBuild2 = (cb) => dbConnection.query(sql2, cb);
-
-runDbBuild((err, res) => {
+const cb = (err, res) => {
   if (err) {
     throw err;
   }
   return res;
-});
-runDbBuild2((err, res) => {
-  if (err) {
-    throw err;
-  }
-  return res;
-});
+};
+runDbBuild(sql, cb);
+runDbBuild(sql2, cb);
 
-module.exports = {runDbBuild, runDbBuild2};
+module.exports = runDbBuild;
