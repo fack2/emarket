@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "concurrently": "^4.1.2"
+  },
   "devDependencies": {
     "eslint": "^6.3.0",
     "eslint-plugin-react": "^7.14.3",
@@ -12,9 +14,11 @@
   },
   "scripts": {
     "test": "tape src/test/test.js | tap-spec",
-    "dev": "nodemon src/server.js",
+    "server": "nodemon src/server.js",
     "start": "node src/server.js",
-    "eslint": "./node_modules/.bin/eslint src/*/*"
+    "eslint": "./node_modules/.bin/eslint src/*/*",
+    "client":"cd client && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
