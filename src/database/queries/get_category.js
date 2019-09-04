@@ -1,7 +1,7 @@
 const dbConnection = require('../db_connection')
 
 const getCategory = () => dbConnection
-  .query('select * from category')
+  .query('SELECT * FROM category')
   .then(res => res.rows)
   .catch(err => err)
 module.exports = getCategory
