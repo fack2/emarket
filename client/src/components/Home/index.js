@@ -5,7 +5,7 @@ import Category from "../Category";
 class Home extends React.Component {
   goToShop = () => {
     const { history } = this.props;
-    history.push("/error");
+    history.push("/shop");
   };
   render() {
     return (
