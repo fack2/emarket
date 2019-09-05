@@ -34,10 +34,16 @@
 
 .product-name {
     text-align: center;
+    color: black;
+}
+
+a:link {
+    text-decoration: none;
 }
 
 .product-price {
     text-align: end;
+    color: black;
 }
 
 @media screen and (max-width:923px) {

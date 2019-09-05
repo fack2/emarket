@@ -49,7 +49,7 @@ class ProductCard extends React.Component {
           />
         ) : (
        products.map(e=>(
-      <Link to={ '/shop/product/' + e.id }><div className="cards">
+      <Link  to={ '/product/' + e.id }><div className="cards">
       <div className="product-card-back" >
           <div className="product-card" >
           <img className="product-img" src={e.img} alt="product-img"/>
