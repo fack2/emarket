@@ -24,10 +24,11 @@ INSERT INTO "category" (name,ID,img) VALUES
 ('Pampers',12,'https://1.top4top.net/p_13399te1w2.png')
 ;
 
-INSERT INTO "product" (name,ID,price,categoryID,description) VALUES
+INSERT INTO "product" (name,ID,price,categoryID,description,img) VALUES
 ('LIDdells Milk',1,8.0,1,'Cow is milk has long been consumed for its health benefits.
- Among the many valuable nutrients is calcium, which can prevent osteoporosis.'),
-('JnIDi Hummus',2,2.0,1,'JnIDi HummusJnIDi HummusJnIDi Hummus')
+ Among the many valuable nutrients is calcium, which can prevent osteoporosis.'," https://4.top4top.net/p_1341q53by1.png"),
+('JnIDi Hummus',2,2.0,1,'JnIDi HummusJnIDi HummusJnIDi Hummus'," https://5.top4top.net/p_1341prcxa2.png
+")
 ;
 
 INSERT INTO "order" (ID,address,name,phone) VALUES
