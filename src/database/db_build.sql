@@ -27,6 +27,7 @@ CREATE TABLE product (
     name VARCHAR(150) NOT NULL,
     price float,
     description varchar(400),
+    img text,
     categoryID INTEGER REFERENCES category (ID)
 );
 
