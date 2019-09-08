@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import './style.css'
 
 class AddQuantityCart extends Component {
   state = {
@@ -29,25 +30,28 @@ class AddQuantityCart extends Component {
 
   render() {
     return (
-      <div>
-        <button onClick={this.addToCart}>Add to cart</button>
-        <button
+      <div className="continer">
+        <button className="add-to-cart" onClick={this.addToCart}>Add to cart</button>
+        <div className = "qua">
+
+        <button className="bu"
           onClick={() => {
             this.setState({ quantity: this.state.quantity + 1 })
           }}
-        >
-          ++
+          >
+          
         </button>
-        <h2>{this.state.quantity}</h2>
-        <button
+        <h2 className="q">{this.state.quantity}</h2>
+        <button className="bu2"
           onClick={() => {
             this.setState({
               quantity: this.setState.quantity > 0 ? this.state.quantity - 1 : 1
             })
           }}
-        >
-          --
+          >
+          
         </button>
+          </div>
       </div>
     )
   }
