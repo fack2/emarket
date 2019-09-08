@@ -2,6 +2,7 @@ import React from 'react'
 import './style.css'
 import swal from 'sweetalert'
 import NavBar from '../Navbar'
+
 const shippingInfo = () => {
   return (
     <div>
