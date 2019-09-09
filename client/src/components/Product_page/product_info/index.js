@@ -25,6 +25,8 @@ class ProductInfo extends Component {
   componentDidMount() {
     this.request(`/product/${this.props.id}`, res => {
       this.setState({ product: res.product[0] })
+      if(this.props.price===0)
+      this.props.setPrice(this.state.product.price)
     })
   }
   render() {

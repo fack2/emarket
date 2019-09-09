@@ -20,7 +20,7 @@ class AddQuantityCart extends Component {
       productID: this.props.id,
       quantity: this.state.quantity,
       userID: 1,
-      price: 8
+      price: this.props.price
     }
     this.request('/add-to-cart', productInfo, res => {
       console.log(res, 'res0000000000res')
@@ -31,27 +31,27 @@ class AddQuantityCart extends Component {
   render() {
     return (
       <div className="continer">
-        <button className="add-to-cart" onClick={this.addToCart}>Add to cart</button>
-        <div className = "qua">
-
-        <button className="bu"
-          onClick={() => {
-            this.setState({ quantity: this.state.quantity + 1 })
-          }}
-          >
-          
+        <button className="add-to-cart" onClick={this.addToCart}>
+          Add to cart
         </button>
-        <h2 className="q">{this.state.quantity}</h2>
-        <button className="bu2"
-          onClick={() => {
-            this.setState({
-              quantity: this.setState.quantity > 0 ? this.state.quantity - 1 : 1
-            })
-          }}
-          >
-          
-        </button>
-          </div>
+        <div className="qua">
+          <button
+            className="bu"
+            onClick={() => {
+              this.setState({ quantity: this.state.quantity + 1 })
+            }}
+          ></button>
+          <h2 className="q">{this.state.quantity}</h2>
+          <button
+            className="bu2"
+            onClick={() => {
+              this.setState({
+                quantity:
+                  this.setState.quantity > 0 ? this.state.quantity - 1 : 1
+              })
+            }}
+          ></button>
+        </div>
       </div>
     )
   }

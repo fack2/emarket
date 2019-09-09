@@ -5,12 +5,17 @@ import ProductInfo from '../Product_page/product_info'
 import AddQuantityCart from '../Product_page/Add_quantity_cart'
 
 class ProductPage extends Component {
+  state = {price:0}
+
+  setPrice=(newPrice)=>{
+    this.setState({price:newPrice})
+  }
   render () {
     return (
       <>
         <NavBar />
-        <ProductInfo id={this.props.match.params.id} />
-        <AddQuantityCart id={this.props.match.params.id} />
+        <ProductInfo id={this.props.match.params.id} price={this.state.price} setPrice={this.setPrice} />
+        <AddQuantityCart id={this.props.match.params.id } price={this.state.price} />
       </>
     )
   }
