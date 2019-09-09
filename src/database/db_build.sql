@@ -22,9 +22,10 @@ CREATE TABLE category (
     img text
 );
 
-CREATE TABLE product (
+CREATE TABLE product ( 
     ID SERIAL PRIMARY KEY,
     name VARCHAR(150) NOT NULL,
+    img text,
     price float,
     description varchar(400),
     img text,
