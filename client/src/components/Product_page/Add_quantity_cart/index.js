@@ -15,16 +15,13 @@ class AddQuantityCart extends Component {
       .catch(error => {})
   }
   addToCart = () => {
-    console.log('111111111111111')
     const productInfo = {
       productID: this.props.id,
       quantity: this.state.quantity,
       price: this.props.price
     }
     this.request('/add-to-cart', productInfo, res => {
-      console.log(res, 'res0000000000res')
     })
-    console.log('end111111111111111')
   }
 
   render() {

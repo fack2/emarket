@@ -12,7 +12,6 @@ resultProductsArray:[]
   }
   searchProduct= (event) => { 
 const {value} =event.target
-console.log(`this value`, value);
 return this.setState({searchInput:value})
 
   }
@@ -24,7 +23,6 @@ return this.setState({searchInput:value})
     const resultArray =response.data.map(e=>e)
     this.setState({resultProductsArray:resultArray},()=>{
     })
-    console.log(`props`, this.props);
   })}
  }
 
