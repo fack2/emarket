@@ -19,7 +19,6 @@ class AddQuantityCart extends Component {
     const productInfo = {
       productID: this.props.id,
       quantity: this.state.quantity,
-      userID: 1,
       price: this.props.price
     }
     this.request('/add-to-cart', productInfo, res => {
