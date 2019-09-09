@@ -30,16 +30,16 @@ class AddQuantityCart extends Component {
         <button className="add-to-cart" onClick={this.addToCart}>
           Add to cart
         </button>
-        <div className="qua">
+        <div className="quantity-controler">
           <button
-            className="bu"
+            className="increase"
             onClick={() => {
               this.setState({ quantity: this.state.quantity + 1 })
             }}
           ></button>
-          <h2 className="q">{this.state.quantity}</h2>
+          <h2 className="quantity">{this.state.quantity}</h2>
           <button
-            className="bu2"
+            className="decrease"
             onClick={() => {
               this.setState({
                 quantity:
