@@ -1,7 +1,8 @@
 .search-bar {
     display: flex;
     flex-direction: row;
-    margin: 1% auto;
+    justify-content: center;
+    margin: 5% auto;
 }
 
 .search-bar input[type=text] {
@@ -10,14 +11,14 @@
     font-size: 17px;
     border: 1px solid grey;
     float: left;
-    width: 80%;
+    width: 55%;
     background: #f1f1f1;
 }
 
 .search-bar button {
     border-radius: 101px 61px 68px 30px;
     float: left;
-    width: 20%;
+    width: 18%;
     padding: 10px;
     background: #54bc07;
     color: white;

@@ -7,27 +7,38 @@ import './style.css'
 
 class Shop extends Component {
   state = {
-
-resultProducts:[]
+resultProducts:null,
+searchInput:""
 
   }
+
+  searchProduct= (event) => { 
+    const {value} =event.target
+    return this.setState({searchInput:value})
+    
+    
+      }
+
   searchSetArray = (resultProducts) =>{
-
-this.setState({resultProducts})
+   const finalResult =  resultProducts?resultProducts:[]
+this.setState({resultProducts:finalResult})
 
   }
+
+  resetSearch=()=>{
+
+    this.setState({resultProducts:null,searchInput:""})
+  
+  }
+  
   render() {
+    const {resultProducts} = this.state
     return (
       <div className="shop-page">
-      <NavBar />
-       {/* <SearchBar  {...this.props} serchArray={this.searchSetArray} />
-{!this.state.resultProducts.length ? (
-  <ProductCard resultAfterSerch = {this.state.resultProducts} />
+      <NavBar resetSearch={this.resetSearch} />
+      <SearchBar searchInput={this.state.searchInput} searchProduct={this.searchProduct} {...this.props} setFlag={this.setFlag} flag={this.state.flag} trigger={this.state.afterSearchTrigger} serchArray={this.searchSetArray} />
+    <ProductCard resultAfterSerch = {resultProducts} {...this.props}/>
 
-}):  (<ProductCard {...this.props} />)
-    } */}
-    <SearchBar  {...this.props} serchArray={this.searchSetArray} />
-<ProductCard {...this.props} />
     </div>
     ) 
   }
