@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 import swal from "sweetalert";
 import NavBar from "../Navbar";
+import axios from "axios";
 
 class shippingInfo extends Component {
   state = {
@@ -16,13 +17,20 @@ class shippingInfo extends Component {
   };
 
   clickButton = () => {
-    swal({
-      title: "Your Order is processed Contact us on phone No : 0598121490",
-      icon: "success",
-      button: "Home!"
-    }).then(function() {
-      window.location.href = "/";
-    });
+    const { username, phone, Address, Extra_Note } = this.state;
+    if (username !== "" && phone !== "" && Address !== "") {
+      axios
+        .post("/shipping_info", { username, phone, Address, Extra_Note })
+        .then(res => console.log("5555555555", res.data));
+
+      swal({
+        title: "Your Order is processed Contact us on phone No : 0598121490",
+        icon: "success",
+        button: "Home!"
+      }).then(function() {
+        window.location.href = "/";
+      });
+    }
   };
 
   render() {
@@ -32,7 +40,7 @@ class shippingInfo extends Component {
         <NavBar />
 
         <h1>Shipping info</h1>
-        <div className="flex-container">
+        <form className="flex-container">
           <label for="username"></label>
           <input
             type="text"
@@ -40,14 +48,18 @@ class shippingInfo extends Component {
             name="username"
             onChange={this.changeInput}
             value={username}
+            required
           ></input>
           <label for="phone"></label>
           <input
-            type="text"
+            type="number"
+            min = "7"
+            max = "13"
             placeholder="Phone"
             name="phone"
             onChange={this.changeInput}
             value={phone}
+            required
           ></input>
           <label for="Address"></label>
           <input
@@ -56,6 +68,7 @@ class shippingInfo extends Component {
             name="Address"
             onChange={this.changeInput}
             value={Address}
+            required
           ></input>
           <label for="Extra Note"></label>
           <input
@@ -65,10 +78,10 @@ class shippingInfo extends Component {
             onChange={this.changeInput}
             value={Extra_Note}
           ></input>
-        </div>
-        <button className="confirm" onClick={this.clickButton}>
-          Confirm
-        </button>
+          <button type="submit" className="confirm" onClick={this.clickButton}>
+            Confirm
+          </button>
+        </form>
       </div>
     );
   }
