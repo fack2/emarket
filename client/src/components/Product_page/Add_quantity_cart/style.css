@@ -4,29 +4,23 @@
 }
 .quantity-controler{
   display: inline;
-  /* float:right; */
 }
 .add-to-cart {
   width: 140px;
   height: 40px;
   stroke: Solid #ffffff;
-  /* display: inline; */
   margin-top: 15%;
   margin-right: 28%;
   margin-left: 3%;
   background: #50bb00;
-  /* margin-right: 10%; */
-  /* border: 2px solid #FFFFFF; */
   box-sizing: border-box;
   border-radius: 5px;
 }
 .increase {
-  /* float: left; */
   display: inline;
   width: 0;
   border-width: 0px;
 
-  /* margin-left: 17%; */
   height: 0;
   background: #fff;
   border-top: 20px solid transparent;
@@ -39,7 +33,6 @@
   border-width: 0px;
 
   width: 0;
-  /* float: right; */
   height: 0;
   background: #fff;
   border-top: 20px solid transparent;
