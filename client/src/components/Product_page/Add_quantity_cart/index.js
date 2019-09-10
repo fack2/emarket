@@ -16,7 +16,7 @@ class AddQuantityCart extends Component {
     axios
       .post('/add-to-cart', productInfo)
       .then(response => {
-        console.log(response,'done, added to cart')
+        console.log(response, 'done, added to cart')
       })
       .catch(error => {
         console.log(error, 'components/Product_page/Add_quantity_cart')
@@ -41,8 +41,7 @@ class AddQuantityCart extends Component {
             className="decrease"
             onClick={() => {
               this.setState({
-                quantity:
-                  this.setState.quantity > 0 ? this.state.quantity - 1 : 1
+                quantity: this.state.quantity > 1 ? this.state.quantity - 1 : 1
               })
             }}
           ></button>

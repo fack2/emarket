@@ -14,15 +14,16 @@ class ProductInfo extends Component {
   componentDidMount() {
     axios
       .get(`/product/${this.props.id}`)
-      .then(res => {
-        this.setState({ product: res.product[0] })
+      .then(response => {
+        this.setState({ product: response.data.product[0] })
         if (this.props.price === 0)
           this.props.setPrice(this.state.product.price)
       })
       .catch(error => {
-        console.log(error, 'components/Product_page/product_info/index.js')
+        console.log(error)
       })
   }
+
   render() {
     return (
       <div className="product-card-back2">
