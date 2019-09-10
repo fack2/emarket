@@ -33,6 +33,10 @@ class shippingInfo extends Component {
     }
   };
 
+  handleSubmit(event) {
+    event.preventDefault();
+  }
+
   render() {
     const { username, phone, Address, Extra_Note } = this.state;
     return (
@@ -40,7 +44,7 @@ class shippingInfo extends Component {
         <NavBar />
 
         <h1>Shipping info</h1>
-        <form className="flex-container">
+        <form className="flex-container" onSubmit={this.handleSubmit}>
           <label for="username"></label>
           <input
             type="text"
@@ -53,8 +57,8 @@ class shippingInfo extends Component {
           <label for="phone"></label>
           <input
             type="number"
-            min = "7"
-            max = "13"
+            minLength="7"
+            maxLength="15"
             placeholder="Phone"
             name="phone"
             onChange={this.changeInput}

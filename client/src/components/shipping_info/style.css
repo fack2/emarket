@@ -3,7 +3,7 @@
     flex-direction: column;
     border: 1px #000000;
   }
-  input[type="text"] {
+  .flex-container input[type="text"] {
     border: 0px;
     border-bottom: solid 1px;
     width: 95%;
@@ -21,9 +21,8 @@
     color: white;
     margin: 20% 50% auto 24%;
     font-size: 1.2em
-  
   }
-  input[type="number"] {
+  .flex-container input[type="number"] {
     border: 0px;
     border-bottom: solid 1px;
     width: 95%;
