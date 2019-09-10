@@ -9,5 +9,5 @@ const postOrder = (name, address, phone, note) => {
     .then(res => res.rows)
 
     .catch(err => err)
-};
+}
 module.exports = postOrder
