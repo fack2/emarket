@@ -21,15 +21,18 @@ class shippingInfo extends Component {
     if (username !== "" && phone !== "" && Address !== "") {
       axios
         .post("/shipping_info", { username, phone, Address, Extra_Note })
-        .then(res => res.data);
-
-      swal({
-        title: "Your Order is processed Contact us on phone No : 0598121490",
-        icon: "success",
-        button: "Home!"
-      }).then(function() {
-        window.location.href = "/";
-      });
+        .then(res => {
+          if (res.data) {
+            swal({
+              title:
+                "Your Order is processed Contact us on phone No : 0598121490",
+              icon: "success",
+              button: "Home!"
+            }).then(function() {
+              window.location.href = "/";
+            });
+          }
+        });
     }
   };
 
