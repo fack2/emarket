@@ -6,25 +6,33 @@ import Shop from "../Shop";
 import shipping_info from "../shipping_info";
 
 class App extends Component {
-  state = {
-    category_id: null
-  };
-  setCatogeryId = category_id => {
-    this.setState({ category_id });
-  };
 
-  render() {
-    return (
-      <Router>
-        <div className="App">
-          <Route exact path="/" component={Home} />
-          <Route path="/shop/:id" component={Shop} />
-          <Route exact path="/shop" component={Shop} />
-          <Route exact path="/shipping_info" component={shipping_info} />
-        </div>{" "}
-      </Router>
-    );
-  }
+    state = {
+        category_id: null
+    }
+     setCatogeryId = (category_id) => {
+
+        this.setState({ category_id })
+
+    }
+
+
+
+    render() {
+        return ( < Router >
+            <div className = "App" >
+            <Route exact path = "/"
+          component = { Home } /> 
+            <Route  path = "/shop/:id" component={Shop}/> 
+            <Route exact path = "/shop" component={Shop}/> 
+            <Route  path = "/search/:searchInput" component={Shop}/>
+            <Route exact path="/shipping_info" component={shipping_info} />
+            
+
+            </div> </Router >
+
+        )
+    }
 }
 
 export default App;
