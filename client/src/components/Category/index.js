@@ -27,7 +27,7 @@ class Category extends React.Component {
           this.state.result.map(e => (
           <Link  to={'/shop/'+e.id }>
             <div onClick={this.props.onClick}>
-              <img className="grid-item" src={e.img} />
+              <img className="grid-item" src={e.img} alt = {e.name+" image"} />
               <p className="category">{e.name}</p>
             </div>
             </Link>

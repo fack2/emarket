@@ -10,7 +10,7 @@ const Home = () => {
       <img
         className="main-img"
         src="https://5.top4top.net/p_1341td5iv1.jpg"
-        alt="main image"
+        alt="main_image"
       />
       <Category />
     </div>
