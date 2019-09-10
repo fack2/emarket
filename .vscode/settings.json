@@ -1,0 +1,5 @@
+{
+  "eslint.autoFixOnSave": true,
+  "workbench.tree.indent": 2,
+  "editor.tabSize": 2
+}
