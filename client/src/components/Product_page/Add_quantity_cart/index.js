@@ -6,22 +6,21 @@ class AddQuantityCart extends Component {
   state = {
     quantity: 1
   }
-  request = (url, productInfo, cb) => {
-    axios
-      .post(url, productInfo)
-      .then(response => {
-        cb(response)
-      })
-      .catch(error => {})
-  }
+
   addToCart = () => {
     const productInfo = {
       productID: this.props.id,
       quantity: this.state.quantity,
       price: this.props.price
     }
-    this.request('/add-to-cart', productInfo, res => {
-    })
+    axios
+      .post('/add-to-cart', productInfo)
+      .then(response => {
+        console.log(response,'done, added to cart')
+      })
+      .catch(error => {
+        console.log(error, 'components/Product_page/Add_quantity_cart')
+      })
   }
 
   render() {

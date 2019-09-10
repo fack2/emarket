@@ -11,23 +11,17 @@ class ProductInfo extends Component {
     name: 'loading'
   }
 
-  request = (url, cb) => {
+  componentDidMount() {
     axios
-      .get(url)
-      .then(response => {
-        return cb(response.data)
+      .get(`/product/${this.props.id}`)
+      .then(res => {
+        this.setState({ product: res.product[0] })
+        if (this.props.price === 0)
+          this.props.setPrice(this.state.product.price)
       })
       .catch(error => {
-        console.log(error)
+        console.log(error, 'components/Product_page/product_info/index.js')
       })
-  }
-
-  componentDidMount() {
-    this.request(`/product/${this.props.id}`, res => {
-      this.setState({ product: res.product[0] })
-      if(this.props.price===0)
-      this.props.setPrice(this.state.product.price)
-    })
   }
   render() {
     return (
