@@ -1,0 +1,31 @@
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px #000000;
+  }
+  .flex-container input[type="text"] {
+    border: 0px;
+    border-bottom: solid 1px;
+    width: 95%;
+    margin: 6% auto 6% auto;
+    font-size: 1.2em;
+  }
+  .confirm {
+    text-align: center;
+    align-items: center;
+    width: 193px;
+    height: 63px;
+    background-color: #50bb00;
+    border-radius: 5px;
+    border: 0px;
+    color: white;
+    margin: 20% 50% auto 24%;
+    font-size: 1.2em
+  }
+  .flex-container input[type="tel"] {
+    border: 0px;
+    border-bottom: solid 1px;
+    width: 95%;
+    margin: 6% auto 6% auto;
+    font-size: 1.2em;
+  }
