@@ -15,16 +15,12 @@
   flex-direction: row;
 }
 
-.cart,
-.menu {
+.cart {
   width: 23px;
   height: 21px;
   margin: 10px 6px;
+}
 
-}
-.menu {
-  margin-right: 27px;
-}
 .logo {
   width: 98px;
   height: 41px;
@@ -33,4 +29,14 @@
 .shop {
   margin-top: 15px;
   margin-left: 35%;
+}
+.menu{
+  background-color: white;
+}
+
+.change1 {
+  visibility: hidden;
+}
+.change2 {
+  visibility: visible;
 }

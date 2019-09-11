@@ -5,6 +5,7 @@ import Home from '../Home'
 import Shop from '../Shop'
 import ProductPage from '../Product_page'
 import shipping_info from "../shipping_info";
+import about_us from "../about_us";
 
 
 class App extends Component {
