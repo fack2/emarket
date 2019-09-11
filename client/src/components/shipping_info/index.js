@@ -16,7 +16,7 @@ class shippingInfo extends Component {
     this.setState({ [name]: value });
   };
 
-  handleSubmit=(event)=> {
+  handleSubmit = event => {
     event.preventDefault();
     const { username, phone, Address, Extra_Note } = this.state;
 
@@ -34,7 +34,7 @@ class shippingInfo extends Component {
           });
         }
       });
-  }
+  };
 
   render() {
     const { username, phone, Address, Extra_Note } = this.state;
