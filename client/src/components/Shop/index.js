@@ -38,7 +38,7 @@ class Shop extends Component {
           trigger={this.state.afterSearchTrigger}
           serchArray={this.searchSetArray}
         />
-        <ProductCard resultAfterSerch={resultProducts} {...this.props} />
+        <ProductCard resultAfterSerch={resultProducts} path={this.props.location.pathname} {...this.props} />
       </div>
     )
   }
