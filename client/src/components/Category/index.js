@@ -38,4 +38,3 @@ class Category extends React.Component {
   }
 }
 export default Category;
-// this.state.result?(this.state.map(e=>...):<h2>Loading</h2>
