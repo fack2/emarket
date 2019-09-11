@@ -7,7 +7,6 @@ import Register from '../register'
 import ProductPage from '../Product_page'
 import shipping_info from "../shipping_info";
 
-
 class App extends Component {
   state = {
     category_id: null
@@ -24,12 +23,11 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route path="/shop/:id" component={Shop} />
           <Route exact path="/shop" component={Shop} />
-          <Route path="/product/:id" component={ProductPage} />
           <Route exact path="/register" component={Register} />
           <Route path="/product/:id" component={ProductPage} />
           <Route path="/search/:searchInput" component={Shop} />
           <Route exact path="/shipping_info" component={shipping_info} />
-        </div>{' '}
+        </div>
       </Router>
     )
   }
