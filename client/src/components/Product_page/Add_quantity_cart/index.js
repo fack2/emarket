@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import './style.css'
-import swal from "sweetalert";
+import swal from 'sweetalert'
 
 class AddQuantityCart extends Component {
   state = {
@@ -17,23 +17,29 @@ class AddQuantityCart extends Component {
     axios
       .post('/add-to-cart', productInfo)
       .then(response => {
-        console.log(response, 'done, added to cart')
+        swal({
+          title: 'added to cart',
+          icon: 'success',
+          button: 'Continue shoping'
+        }).then(res => {
+          window.location.href = `${this.props.prePath}`
+        })
       })
       .catch(error => {
+        swal({
+          title: 'err add to cart',
+          icon: 'error',
+          button: 'return to shoping'
+        }).then(res => {
+          window.location.href = `${this.props.prePath}`
+        })
         console.log(error, 'components/Product_page/Add_quantity_cart')
       })
-      swal({
-        title: "added to cart",
-        icon: "success",
-        button: "Continue shoping",
-      }).then(function() {
-        window.location.href = `/${this.props}`;
-      });
-    }
-    
-    render() {
-      console.log(this.props)
-      return (
+  }
+
+  render() {
+    console.log(this.props)
+    return (
       <div className="continer">
         <button className="add-to-cart" onClick={this.addToCart}>
           Add to cart

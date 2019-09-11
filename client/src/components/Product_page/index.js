@@ -11,7 +11,6 @@ class ProductPage extends Component {
     this.setState({price:newPrice})
   }
   render () {
-
     return (
       <>
         <NavBar />

@@ -4,47 +4,44 @@ import SearchBar from '../Search_bar'
 import React, { Component } from 'react'
 import './style.css'
 
-
 class Shop extends Component {
   state = {
-resultProducts:null,
-searchInput:""
-
+    resultProducts: null,
+    searchInput: ''
   }
 
-  searchProduct= (event) => { 
-    const {value} =event.target
-    return this.setState({searchInput:value})
-    
-    
-      }
-
-  searchSetArray = (resultProducts) =>{
-   const finalResult =  resultProducts?resultProducts:[]
-this.setState({resultProducts:finalResult})
-
+  searchProduct = event => {
+    const { value } = event.target
+    return this.setState({ searchInput: value })
   }
 
-  resetSearch=()=>{
-
-    this.setState({resultProducts:null,searchInput:""})
-  
+  searchSetArray = resultProducts => {
+    const finalResult = resultProducts ? resultProducts : []
+    this.setState({ resultProducts: finalResult })
   }
-  
+
+  resetSearch = () => {
+    this.setState({ resultProducts: null, searchInput: '' })
+  }
+
   render() {
-    const {resultProducts} = this.state
+    const { resultProducts } = this.state
     return (
       <div className="shop-page">
-      <NavBar resetSearch={this.resetSearch} />
-      <SearchBar searchInput={this.state.searchInput} searchProduct={this.searchProduct} {...this.props} setFlag={this.setFlag} flag={this.state.flag} trigger={this.state.afterSearchTrigger} serchArray={this.searchSetArray} />
-    <ProductCard resultAfterSerch = {resultProducts} {...this.props}/>
-
-    </div>
-    ) 
+        <NavBar resetSearch={this.resetSearch} />
+        <SearchBar
+          searchInput={this.state.searchInput}
+          searchProduct={this.searchProduct}
+          {...this.props}
+          setFlag={this.setFlag}
+          flag={this.state.flag}
+          trigger={this.state.afterSearchTrigger}
+          serchArray={this.searchSetArray}
+        />
+        <ProductCard resultAfterSerch={resultProducts} path={this.props.location.pathname} {...this.props} />
+      </div>
+    )
   }
 }
 
 export default Shop
-
-
-
