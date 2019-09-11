@@ -22,7 +22,7 @@
     margin: 20% 50% auto 24%;
     font-size: 1.2em
   }
-  .flex-container input[type="number"] {
+  .flex-container input[type="tel"] {
     border: 0px;
     border-bottom: solid 1px;
     width: 95%;

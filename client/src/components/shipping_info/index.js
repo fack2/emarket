@@ -59,15 +59,15 @@ class shippingInfo extends Component {
           ></input>
           <label for="phone"></label>
           <input
-            type="number"
-            minLength="7"
-            maxLength="15"
-            placeholder="Phone"
+            type="tel"
+            id="phone"
             name="phone"
-            onChange={this.changeInput}
-            value={phone}
+            placeholder="Phone"
+            minlength="7"
+            maxlength="15"
             required
           ></input>
+
           <label for="Address"></label>
           <input
             type="text"
