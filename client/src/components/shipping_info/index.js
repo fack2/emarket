@@ -16,28 +16,24 @@ class shippingInfo extends Component {
     this.setState({ [name]: value });
   };
 
-  clickButton = () => {
-    const { username, phone, Address, Extra_Note } = this.state;
-    if (username !== "" && phone !== "" && Address !== "") {
-      axios
-        .post("/shipping_info", { username, phone, Address, Extra_Note })
-        .then(res => {
-          if (res.data) {
-            swal({
-              title:
-                "Your Order is processed Contact us on phone No : 0598121490",
-              icon: "success",
-              button: "Home!"
-            }).then(function() {
-              window.location.href = "/";
-            });
-          }
-        });
-    }
-  };
-
   handleSubmit(event) {
     event.preventDefault();
+    const { username, phone, Address, Extra_Note } = this.state;
+
+    axios
+      .post("/shipping_info", { username, phone, Address, Extra_Note })
+      .then(res => {
+        if (res.data) {
+          swal({
+            title:
+              "Your Order is processed Contact us on phone No : 0598121490",
+            icon: "success",
+            button: "Home!"
+          }).then(function() {
+            window.location.href = "/";
+          });
+        }
+      });
   }
 
   render() {
@@ -60,11 +56,11 @@ class shippingInfo extends Component {
           <label for="phone"></label>
           <input
             type="tel"
-            id="phone"
             name="phone"
-            placeholder="Phone"
-            minlength="7"
-            maxlength="15"
+            placeholder="Phone 059-123-1234"
+            onChange={this.changeInput}
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            value={phone}
             required
           ></input>
 
@@ -85,7 +81,7 @@ class shippingInfo extends Component {
             onChange={this.changeInput}
             value={Extra_Note}
           ></input>
-          <button type="submit" className="confirm" onClick={this.clickButton}>
+          <button type="submit" className="confirm">
             Confirm
           </button>
         </form>
