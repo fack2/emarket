@@ -37,7 +37,7 @@ class ProductCard extends React.Component {
         {!loading ? (
           myProducts.length > 0 ? (
             myProducts.map(e => (
-              <Link to={'/product/' + e.id + this.state.path1}>
+              <Link to={'/product/' + e.id + this.state.path1} key = {e.id} >
                 <div className="cards">
                   <div className="product-card-back">
                     <div className="product-card">
