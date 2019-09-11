@@ -3,13 +3,15 @@ import './style.css'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
-class ProductCard extends Component {
+class ProductCard extends React.Component {
   state = {
     products: [],
-    loading: true
+    loading: true,
+    path1:"/shop"
   }
 
   componentDidMount() {
+    this.setState({path1:this.props.path})
     if (this.props.match.params.id) {
       axios.get(`/shop/${this.props.match.params.id}`).then(({ data }) => {
         this.setState({ products: data, loading: false })
@@ -20,15 +22,22 @@ class ProductCard extends Component {
       })
     }
   }
-  render() {
-    const { products, loading } = this.state
 
+  searchedProducts = products => {
+    this.setState({ products: products, loading: false })
+  }
+
+  render() {
+    const { products, loading, searchedProducts } = this.state
+    const myProducts = this.props.resultAfterSerch
+      ? this.props.resultAfterSerch
+      : products
     return (
       <>
         {!loading ? (
-          products.length ? (
-            products.map(e => (
-              <Link to={'/product/' + e.id}>
+          myProducts.length > 0 ? (
+            myProducts.map(e => (
+              <Link to={'/product/' + e.id + this.state.path1}>
                 <div className="cards">
                   <div className="product-card-back">
                     <div className="product-card">
