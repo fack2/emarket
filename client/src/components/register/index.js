@@ -16,7 +16,7 @@ class Register extends Component {
     this.setState({ [name]: value })
   }
 
-  clickButton = () => {
+  registerButton = () => {
     axios
       .post('register', {
         username: this.state.username,
@@ -89,7 +89,7 @@ class Register extends Component {
           <button
             type="submit"
             className="register-button"
-            onClick={this.clickButton}
+            onClick={this.registerButton}
           >
             Register
           </button>
