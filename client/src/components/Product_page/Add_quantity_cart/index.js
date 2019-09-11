@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 import './style.css'
+import axios from 'axios'
 import swal from 'sweetalert'
 
 class AddQuantityCart extends Component {
@@ -38,7 +38,6 @@ class AddQuantityCart extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className="continer">
         <button className="add-to-cart" onClick={this.addToCart}>
