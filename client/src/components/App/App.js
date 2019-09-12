@@ -27,6 +27,8 @@ class App extends Component {
           <Route path="/product/:id" component={ProductPage} />
           <Route path="/search/:searchInput" component={Shop} />
           <Route exact path="/shipping_info" component={shipping_info} />
+          <Route exact path="/about_us" component={about_us} />
+
         </div>{' '}
       </Router>
     )
