@@ -28,6 +28,7 @@ class Register extends Component {
         address: this.state.address
       })
       .then(response => {
+        console.log("rrrrrrrrrr",response)
         swal({
           title: 'registerd',
           icon: 'success',

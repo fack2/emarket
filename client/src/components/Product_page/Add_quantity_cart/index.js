@@ -26,7 +26,6 @@ class AddQuantityCart extends Component {
         })
       })
       .catch(error => {
-        console.log(error, '0000000000000000111111111')
         if (error.message.includes('404')) {
           swal({
             title: 'you must register before add to cart',

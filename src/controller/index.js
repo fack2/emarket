@@ -20,17 +20,13 @@ if (login) {
   router.post('/shipping_info', add_order)
   router.post('/add-to-cart', addToCart.post)
 } else {
-  router.post('/shipping_info', (req, res, next) => {
-    next(new Error('go to register'))
+  router.post('/add-to-cart', (req, res, next) => {
+    res.status(404)
+    next(new Error({ message: 'go to register' }))
   })
   router.post('/shipping_info', (req, res, next) => {
     next(new Error('go to register'))
   })
-  // router.post('/add-to-cart', addToCart.post)
-  // router.use(function (req, res, next) {
-  //   // res.send('<h1>page not foud</h1>')
-  //   // res.end()
-  // })
 }
 
 module.exports = router
