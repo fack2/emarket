@@ -10,17 +10,23 @@ class CartPage extends Component {
     loading: true,
     total: 0
   }
-
+  orderNow=()=>{
+    window.location.href='/shipping_info'
+  }
+  addItem=()=>{
+    window.location.href='/shop'
+  }
   componentDidMount() {
     axios.get(`/cart-products`).then(({ data }) => {
       console.log(data, '000000000000000000000')
       this.setState({ products: data, loading: false })
+      const total = data.reduce((a, b) => a + b.total, 0)
+      this.setState({total:total})
     })
   }
 
   render() {
-    let { products, loading, total } = this.state
-    total = products.reduce((a, b) => a + b.total, 0)
+    const { products, loading, total } = this.state
     return (
       <>
         <NavBar />
@@ -60,9 +66,9 @@ class CartPage extends Component {
         )}
         <h1>Total: ₪ {total}</h1>
         <div className="div">
-          <button className="order-now">Order Now</button>
+          <button className="order-now" onClick={this.orderNow}>Order Now</button>
           <br />
-          <button className="add-item">Add Item</button>
+          <button className="add-item" onClick={this.addItem}>Add Item</button>
         </div>
       </>
     )
