@@ -1,18 +1,18 @@
-import React, { Component } from "react";
-import "./style.css";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react'
+import './style.css'
+import { Link } from 'react-router-dom'
 
 class NavBar extends React.Component {
-  state = { toggleMenu: false };
+  state = { toggleMenu: false }
 
   onClick1 = () => {
-    const { toggleMenu } = this.state;
+    const { toggleMenu } = this.state
 
-    this.setState({ toggleMenu: !toggleMenu });
-  };
+    this.setState({ toggleMenu: !toggleMenu })
+  }
 
   render() {
-    const { toggleMenu } = this.state;
+    const { toggleMenu } = this.state
 
     return (
       <div className="nav-bar">
@@ -29,33 +29,35 @@ class NavBar extends React.Component {
           </p>
         </section>
         <section className="cart-section">
-          <img
-            className="cart"
-            src="https://2.top4top.net/p_1339xtovq1.png"
-            alt="cart"
-          />
+          <Link to="/cart">
+            <img
+              className="cart"
+              src="https://2.top4top.net/p_1339xtovq1.png"
+              alt="cart"
+            />
+          </Link>
 
           <img
-            className={!toggleMenu ? "menu" : "clickedMenu"}
+            className={!toggleMenu ? 'menu' : 'clickedMenu'}
             src="https://4.top4top.net/p_1339ilo061.png"
             alt="menu"
             onClick={this.onClick1}
           />
 
-          <div className={!toggleMenu ? "hiddenMenu" : "showMenu"}>
+          <div className={!toggleMenu ? 'hiddenMenu' : 'showMenu'}>
             <Link to="/about_us">
               <h2 className="aboutUs">About us</h2>
             </Link>
-            <Link to ="/login">
+            <Link to="/login">
               <h2>Log in</h2>
             </Link>
-            <Link to ="/register">
+            <Link to="/register">
               <h2>Sing up</h2>
             </Link>
           </div>
         </section>
       </div>
-    );
+    )
   }
 }
-export default NavBar;
+export default NavBar

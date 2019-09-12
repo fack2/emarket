@@ -11,8 +11,8 @@ CREATE TABLE "user"
 (
     ID SERIAL PRIMARY KEY,
     name VARCHAR(150) NOT NULL,
-    email VARCHAR(40) unique,
-    password VARCHAR(40),
+    email VARCHAR(40) unique NOT NULL,
+    password VARCHAR(80),
     address VARCHAR(100),
     phone VARCHAR(13)
 );
