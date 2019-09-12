@@ -5,8 +5,9 @@ import Home from '../Home'
 import Shop from '../Shop'
 import Register from '../register'
 import ProductPage from '../Product_page'
-import shipping_info from "../shipping_info";
-import cartPage from "../cart_page";
+import shipping_info from '../shipping_info'
+import cartPage from '../cart_page'
+import about_us from '../about_us'
 
 class App extends Component {
   state = {
@@ -29,6 +30,7 @@ class App extends Component {
           <Route path="/search/:searchInput" component={Shop} />
           <Route exact path="/shipping_info" component={shipping_info} />
           <Route exact path="/cart" component={cartPage} />
+          <Route exact path="/about_us" component={about_us} />
         </div>
       </Router>
     )
