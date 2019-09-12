@@ -28,10 +28,9 @@
     "scripts": {
         "test": "tape src/test/test.js | tap-spec",
         "server": "nodemon src/server.js",
-        "start": "node src/server.js",
         "eslint": "./node_modules/.bin/eslint src/*",
         "client": "cd client && npm start",
-        "dev": "concurrently \"npm run server\" \"npm run client\""
+        "start": "concurrently \"npm run server\" \"npm run client\""
     },
     "repository": {
         "type": "git",
