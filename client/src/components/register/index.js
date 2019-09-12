@@ -33,7 +33,7 @@ class Register extends Component {
           icon: 'success',
           button: 'go to Home'
         }).then(res => {
-        window.location.href = `/`
+        window.location.href = `/login`
         })
       })
       .catch(error => {
