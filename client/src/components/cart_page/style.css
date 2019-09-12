@@ -1,11 +1,13 @@
 .item-cart {
   display: flex;
-  width: 85%
+  width: 100%;
 }
-
-.title-cart{
+.link {
+  margin-right: 15%;
+}
+.title-cart {
   margin-left: 4%;
-  margin-top: 4%
+  margin-top: 4%;
 }
 .order-now {
   width: 140px;
@@ -21,10 +23,16 @@
   height: 40px;
   stroke: Solid #ffffff;
   margin-top: 5%;
-  background: #BDBDBD;
+  background: #bdbdbd;
   box-sizing: border-box;
   border-radius: 5px;
 }
-.div{
+.div {
   text-align: center;
+}
+.deleteItem {
+  width: 10%;
+  padding: 2%;
+  height: 50%;
+  margin-top: 30%;
 }

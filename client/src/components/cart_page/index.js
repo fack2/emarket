@@ -3,6 +3,7 @@ import './style.css'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import NavBar from '../Navbar'
+import swal from 'sweetalert'
 
 class CartPage extends Component {
   state = {
@@ -10,18 +11,43 @@ class CartPage extends Component {
     loading: true,
     total: 0
   }
-  orderNow=()=>{
-    window.location.href='/shipping_info'
+  orderNow = () => {
+    window.location.href = '/shipping_info'
   }
-  addItem=()=>{
-    window.location.href='/shop'
+  addItem = () => {
+    window.location.href = '/shop'
+  }
+  deleteItem = event => {
+    const { name } = event.target
+    console.log("name",name)
+    axios
+      .get(`/delete/${name}`)
+      .then(res => {
+        swal({
+          title: 'deleted from the cart',
+          icon: 'success',
+          button: 'Continue'
+        }).then(res => {
+          window.location.href = `/cart`
+        })
+      })
+      .catch(error => {
+        swal({
+          title: 'can not delete item from cart',
+          icon: 'error',
+          button: 'Continue'
+        }).then(res => {
+          window.location.href = `/cart`
+        })
+        console.log(error, 'components/cartPage delete button')
+      })
   }
   componentDidMount() {
     axios.get(`/cart-products`).then(({ data }) => {
       console.log(data, '000000000000000000000')
       this.setState({ products: data, loading: false })
       const total = data.reduce((a, b) => a + b.total, 0)
-      this.setState({total:total})
+      this.setState({ total: total })
     })
   }
 
@@ -34,25 +60,38 @@ class CartPage extends Component {
         {!loading ? (
           products.length > 0 ? (
             products.map(e => (
-              <Link to={'/product/' + e.productid + '/cart'} key={e.productid}>
-                <div className="cards item-cart">
-                  <div className="product-card-back item-cart">
-                    <div className="product-card item-cart">
-                      <img
-                        className="product-img"
-                        src={e.img}
-                        alt="product-img"
-                      />
-                      <div>
-                        <p className="product-name">{e.name}</p>
-                        <p className="product-price">price: ₪ {e.price}</p>
-                        <p className="product-price">quantity: {e.quantity}</p>
-                        <p className="product-price">total: ₪ {e.total}</p>
+                <div className="cards item-cart" key={e.productid}>
+                  <Link
+                    className="link"
+                    to={'/product/' + e.productid + '/cart'}
+                    
+                  >
+                    <div className="product-card-back item-cart">
+                      <div className="product-card item-cart">
+                        <img
+                          className="product-img"
+                          src={e.img}
+                          alt="product-img"
+                        />
+                        <div>
+                          <p className="product-name">{e.name}</p>
+                          <p className="product-price">price: ₪ {e.price}</p>
+                          <p className="product-price">
+                            quantity: {e.quantity}
+                          </p>
+                          <p className="product-price">total: ₪ {e.total}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
+                  <button
+                    className="deleteItem"
+                    onClick={this.deleteItem}
+                    name={e.productid}
+                  >
+                    del
+                  </button>
                 </div>
-              </Link>
             ))
           ) : (
             <h1>There is no products</h1>
@@ -66,9 +105,13 @@ class CartPage extends Component {
         )}
         <h1>Total: ₪ {total}</h1>
         <div className="div">
-          <button className="order-now" onClick={this.orderNow}>Order Now</button>
+          <button className="order-now" onClick={this.orderNow}>
+            Order Now
+          </button>
           <br />
-          <button className="add-item" onClick={this.addItem}>Add Item</button>
+          <button className="add-item" onClick={this.addItem}>
+            Add Item
+          </button>
         </div>
       </>
     )
