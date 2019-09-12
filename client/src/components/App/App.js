@@ -5,6 +5,7 @@ import Home from '../Home'
 import Shop from '../Shop'
 import ProductPage from '../Product_page'
 import shipping_info from "../shipping_info";
+import about_us from "../about_us";
 
 
 class App extends Component {
@@ -26,6 +27,8 @@ class App extends Component {
           <Route path="/product/:id" component={ProductPage} />
           <Route path="/search/:searchInput" component={Shop} />
           <Route exact path="/shipping_info" component={shipping_info} />
+          <Route exact path="/about_us" component={about_us} />
+
         </div>{' '}
       </Router>
     )
