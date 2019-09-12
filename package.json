@@ -33,7 +33,11 @@
     "client": "cd client && npm start",
     "start": "node src/server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "build": "cd client && npm run build",
+    "eject": "react-scripts eject"
+
+
 
   },
   "repository": {
