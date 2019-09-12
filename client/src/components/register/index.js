@@ -2,6 +2,7 @@ import NavBar from '../Navbar/index.js'
 import React, { Component } from 'react'
 import './style.css'
 import axios from 'axios'
+import swal from 'sweetalert'
 
 class Register extends Component {
   state = {
@@ -16,9 +17,10 @@ class Register extends Component {
     this.setState({ [name]: value })
   }
 
-  registerButton = () => {
+  registerButton = (event) => {
+    event.preventDefault()
     axios
-      .post('register', {
+      .post('/register', {
         username: this.state.username,
         email: this.state.email,
         password: this.state.password,
@@ -26,10 +28,22 @@ class Register extends Component {
         address: this.state.address
       })
       .then(response => {
-        console.log(response)
+        swal({
+          title: 'registerd',
+          icon: 'success',
+          button: 'go to Home'
+        }).then(res => {
+        window.location.href = `/`
+        })
       })
       .catch(error => {
-        console.log('axios post register errrrrrrrrr')
+        swal({
+          title: 'ERROR try again',
+          icon: 'error',
+          button: 'try now'
+        }).then(res => {
+        window.location.href = `/register`
+      })
       })
   }
   render() {
@@ -38,8 +52,8 @@ class Register extends Component {
     return (
       <div className="register">
         <NavBar />
-        <form className="flex-container">
-          <label for="username"></label>
+        <form className="flex-container2">
+          <label htmlFor="username"></label>
           <input
             type="text"
             placeholder="Name"
@@ -48,7 +62,7 @@ class Register extends Component {
             value={username}
             required
           ></input>
-          <label for="email"></label>
+          <label htmlFor="email"></label>
           <input
             type="email"
             placeholder="Email"
@@ -57,7 +71,7 @@ class Register extends Component {
             value={email}
             required
           ></input>
-          <label for="password"></label>
+          <label htmlFor="password"></label>
           <input
             type="password"
             placeholder="Password"
@@ -65,7 +79,7 @@ class Register extends Component {
             onChange={this.changeInput}
             value={password}
           ></input>
-          <label for="phone"></label>
+          <label htmlFor="phone"></label>
           <input
             type="text"
             min="7"
@@ -76,7 +90,7 @@ class Register extends Component {
             value={phone}
             required
           ></input>
-          <label for="address"></label>
+          <label htmlFor="address"></label>
           <input
             type="text"
             placeholder="Address"
