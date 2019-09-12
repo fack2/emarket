@@ -10,3 +10,7 @@
 .description {
   padding: 17px;
 }
+@media screen and (max-width: 800px){
+  .pageAboutUs,.superMarket
+ { width: 100%}
+}

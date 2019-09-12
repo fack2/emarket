@@ -3,7 +3,7 @@ import './style.css'
 import NavBar from '../Navbar'
 const aboutUs = () => {
   return (
-    <div>
+    <div className="pageAboutUs">
       <NavBar />
       <img className ="superMarket"src="https://2.top4top.net/p_1348iki641.jpg"></img>
       <h1 className="aboutUs">About us :</h1>
