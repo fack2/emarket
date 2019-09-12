@@ -3,6 +3,7 @@ import './App.css'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Home from '../Home'
 import Shop from '../Shop'
+import Login from '../Login'
 
 
 
@@ -28,6 +29,7 @@ class App extends Component {
             <Route  path = "/shop/:id" component={Shop}/> 
             <Route exact path = "/shop" component={Shop}/> 
             <Route  path = "/search/:searchInput" component={Shop}/>
+            <Route  path = "/login" component={Login}/>
             
 
             </div> </Router >
