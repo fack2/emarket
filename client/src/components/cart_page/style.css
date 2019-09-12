@@ -1,0 +1,30 @@
+.item-cart {
+  display: flex;
+  width: 85%
+}
+
+.title-cart{
+  margin-left: 4%;
+  margin-top: 4%
+}
+.order-now {
+  width: 140px;
+  height: 40px;
+  stroke: Solid #ffffff;
+  margin-top: 5%;
+  background: #50bb00;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.add-item {
+  width: 140px;
+  height: 40px;
+  stroke: Solid #ffffff;
+  margin-top: 5%;
+  background: #BDBDBD;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.div{
+  text-align: center;
+}

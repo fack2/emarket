@@ -12,9 +12,10 @@ const NavBar = ({ resetSearch }) => {
           alt = "logo" /> </Link>
         <p className = "shop" ><Link onClick={resetSearch} to="/shop" > Shop </Link></p> </section >
       <section className = "cart-section" >
-        <img className = "cart"
+        <Link to="/cart" ><img className = "cart"
           src = "https://2.top4top.net/p_1339xtovq1.png"
-          alt = "cart" />
+          alt = "cart" /></Link>
+
         <img className = "menu"
           src = "https://4.top4top.net/p_1339ilo061.png"
           alt = "menu" />
