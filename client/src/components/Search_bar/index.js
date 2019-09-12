@@ -16,14 +16,14 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="search-bar">
-        <input
+        <input className="search-bar"
           type="text"
           placeholder="Search.."
           name="search2"
           onChange={this.props.searchProduct}
           value={this.props.searchInput}
         />
-        <button onClick={this.getSearchedProduct} type="button">
+        <button className="search-bar" onClick={this.getSearchedProduct} type="button">
           <i class="fa fa-search"></i>
         </button>
       </div>
