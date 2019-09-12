@@ -26,19 +26,14 @@
     "nodemon": "^1.19.1"
   },
   "scripts": {
-    "test": "tape src/test/test.js | tap-spec",
-    "server2": "node src/server.js",
-    "server": "nodemon src/server.js",
-    "eslint": "./node_modules/.bin/eslint src/*",
-    "client": "cd client && npm start",
-    "start": "node src/server.js",
+    "client-install": "cd client && npm install",
+    "client": "cd client && npm run start",
+    "start": "node ./src/server.js",
+    "server": "nodemon ./src/server.js",
+    "build": "cd client && npm run build",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "cd client && npm install && npm run build",
-    "build": "cd client && npm run build",
-    "eject": "react-scripts eject",
-    "client-install": "cd client && npm install"
-
-
+    "eject": "react-scripts eject"
 
 
   },
