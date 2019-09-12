@@ -26,13 +26,23 @@ class AddQuantityCart extends Component {
         })
       })
       .catch(error => {
-        swal({
-          title: 'err add to cart',
-          icon: 'error',
-          button: 'return to shoping'
-        }).then(res => {
-          window.location.href = `${this.props.prePath}`
-        })
+        console.log(error, '0000000000000000111111111')
+        if (error.message.includes('404')) {
+          swal({
+            title: 'you must register before add to cart',
+            icon: 'error',
+            button: 'go to register page'
+          }).then(res => {
+            window.location.href = `/register`
+          })
+        } else
+          swal({
+            title: 'err add to cart',
+            icon: 'error',
+            button: 'return to shoping'
+          }).then(res => {
+            window.location.href = `${this.props.prePath}`
+          })
         console.log(error, 'components/Product_page/Add_quantity_cart')
       })
   }
