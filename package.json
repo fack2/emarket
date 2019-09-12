@@ -1,46 +1,48 @@
 {
-    "name": "emarket",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "dependencies": {
-        "alert-node": "^2.0.0",
-        "axios": "^0.19.0",
-        "bcryptjs": "^2.4.3",
-        "concurrently": "^4.1.2",
-        "env2": "^2.2.2",
-        "fs": "0.0.1-security",
-        "pg": "^7.12.1",
-        "prop-types": "^15.7.2",
-        "sweetalert": "^2.1.2"
-    },
-    "devDependencies": {
-        "eslint": "^6.3.0",
-        "eslint-config-standard": "^14.1.0",
-        "eslint-plugin-import": "^2.18.2",
-        "eslint-plugin-node": "^9.2.0",
-        "eslint-plugin-promise": "^4.2.1",
-        "eslint-plugin-react": "^7.14.3",
-        "eslint-plugin-standard": "^4.0.1",
-        "express": "^4.17.1",
-        "nodemon": "^1.19.1"
-    },
-    "scripts": {
-        "test": "tape src/test/test.js | tap-spec",
-        "server": "nodemon src/server.js",
-        "eslint": "./node_modules/.bin/eslint src/*",
-        "client": "cd client && npm start",
-        "start": "concurrently \"npm run server\" \"npm run client\""
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/fack2/emarket.git"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/fack2/emarket/issues"
-    },
-    "homepage": "https://github.com/fack2/emarket#readme"
+  "name": "emarket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "alert-node": "^2.0.0",
+    "axios": "^0.19.0",
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^4.1.2",
+    "env2": "^2.2.2",
+    "fs": "0.0.1-security",
+    "pg": "^7.12.1",
+    "prop-types": "^15.7.2",
+    "sweetalert": "^2.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.3.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^9.2.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-standard": "^4.0.1",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1"
+  },
+  "scripts": {
+    "test": "tape src/test/test.js | tap-spec",
+    "server2": "node src/server.js",
+    "server": "nodemon src/server.js",
+    "eslint": "./node_modules/.bin/eslint src/*",
+    "client": "cd client && npm start",
+    "start": "concurrently \"npm run server2\" \"npm run client\"",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fack2/emarket.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fack2/emarket/issues"
+  },
+  "homepage": "https://github.com/fack2/emarket#readme"
 }
