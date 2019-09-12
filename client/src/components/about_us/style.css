@@ -4,5 +4,9 @@
   left: 0px;
   top: 100px;
 }
-.aboutUs{
-text-align: inherit}
+.aboutUs {
+  text-align: center;
+}
+.description {
+  padding: 17px;
+}

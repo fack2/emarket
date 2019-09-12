@@ -36,23 +36,22 @@ class NavBar extends React.Component {
           />
 
           <img
-            className="menu"
+            className={!toggleMenu ? "menu" : "clickedMenu"}
             src="https://4.top4top.net/p_1339ilo061.png"
             alt="menu"
             onClick={this.onClick1}
           />
 
-          <div className={!toggleMenu ? "change1" : "change2"}>
+          <div className={!toggleMenu ? "hiddenMenu" : "showMenu"}>
             <Link to="/about_us">
-              <h2 className="aboutUs">about us</h2>
+              <h2 className="aboutUs">About us</h2>
             </Link>
             <Link>
-            <h2>log in</h2>
+              <h2>Log in</h2>
             </Link>
             <Link>
-            <h2>sing up</h2>
+              <h2>Sing up</h2>
             </Link>
-
           </div>
         </section>
       </div>
