@@ -31,8 +31,10 @@
     "server": "nodemon src/server.js",
     "eslint": "./node_modules/.bin/eslint src/*",
     "client": "cd client && npm start",
-    "start": "concurrently \"npm run server2\" \"npm run client\"",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "start": "node src/server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+
   },
   "repository": {
     "type": "git",
