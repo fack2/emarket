@@ -3,11 +3,11 @@ import './App.css'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Home from '../Home'
 import Shop from '../Shop'
-import Register from '../register'
+import Register from '../Register'
 import ProductPage from '../Product_page'
-import shipping_info from '../shipping_info'
-import cartPage from '../cart_page'
-import about_us from '../about_us'
+import shipping_info from '../Shipping_info'
+import cartPage from '../Cart_page'
+import about_us from '../About_us'
 
 class App extends Component {
   state = {

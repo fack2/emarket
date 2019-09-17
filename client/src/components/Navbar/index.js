@@ -25,7 +25,10 @@ class NavBar extends React.Component {
             />
           </Link>
           <p className="shop">
-            <Link to="/shop"> Shop </Link>
+            <Link onClick={this.props.resetSearch} to="/shop">
+              {' '}
+              Shop{' '}
+            </Link>
           </p>
         </section>
         <section className="cart-section">
