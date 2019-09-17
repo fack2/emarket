@@ -6,7 +6,9 @@ const { searchForAllProduct } = require('./get_products_by_name')
 const getCategories = require('./get_category')
 const getProduct = require('./get_product')
 const addToCart = require('./add_to_cart')
+const deleteItem = require('./deleteItem')
 const register = require('./register')
+const getCartProdusts = require('./getCartProdusts')
 const add_order = require('./add_order')
 
 const login = false
@@ -16,6 +18,8 @@ router.get('/search/:searchInput', searchForAllProduct)
 router.get('/shop', getAllProduct)
 router.get('/product/:id', getProduct.get)
 router.post('/register', register.post)
+router.get('/cart-products', getCartProdusts.getProducts)
+router.get('/delete/:id', deleteItem.delete)
 if (login) {
   router.post('/shipping_info', add_order)
   router.post('/add-to-cart', addToCart.post)
