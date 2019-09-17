@@ -28,12 +28,13 @@ class Register extends Component {
         address: this.state.address
       })
       .then(response => {
+        console.log("rrrrrrrrrr",response)
         swal({
           title: 'registerd',
           icon: 'success',
           button: 'go to Home'
         }).then(res => {
-        window.location.href = `/`
+        window.location.href = `/login`
         })
       })
       .catch(error => {

@@ -10,16 +10,27 @@ const deleteItem = require('./deleteItem')
 const register = require('./register')
 const getCartProdusts = require('./getCartProdusts')
 const add_order = require('./add_order')
+
+const login = false
+router.get('/category', getCategories)
 router.get('/shop/:category_id', getAllcategoryProduct)
 router.get('/search/:searchInput', searchForAllProduct)
 router.get('/shop', getAllProduct)
-router.post('/shipping_info', add_order)
-
-router.get('/category', getCategories)
 router.get('/product/:id', getProduct.get)
-router.post('/add-to-cart', addToCart.post)
 router.post('/register', register.post)
 router.get('/cart-products', getCartProdusts.getProducts)
 router.get('/delete/:id', deleteItem.delete)
+if (login) {
+  router.post('/shipping_info', add_order)
+  router.post('/add-to-cart', addToCart.post)
+} else {
+  router.post('/add-to-cart', (req, res, next) => {
+    res.status(404)
+    next(new Error({ message: 'go to register' }))
+  })
+  router.post('/shipping_info', (req, res, next) => {
+    next(new Error('go to register'))
+  })
+}
 
 module.exports = router

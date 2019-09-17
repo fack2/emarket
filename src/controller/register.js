@@ -16,8 +16,4 @@ exports.post = (req, res, next) => {
           next(err)
         })
     })
-    .catch(err => {
-      console.log('hash err')
-      next(err)
-    })
 }
