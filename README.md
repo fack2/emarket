@@ -1,4 +1,5 @@
 # emarket
+ [Demo]()
 
 ### What Does Our Project Do ?
  It is an online shopping website for a supermarket.It allows you to view their products and search for what you need. It also allows you to add the products you want to your cart and then order them by filling your contact information.
@@ -17,3 +18,10 @@
    - create a variable in config.env called DATABASE_URL and give it the local database url as the following:
       DATABASE_URL = postgres://(useName):(userPassword)@localhost:5432/(dbName)
    - run the project by [$npm run dev:all] at the server level and [$npm start] at the client level
+   
+   
+### Team Members:
+ - [Someya](https://github.com/someyaaltous)
+ - [Munir](https://github.com/Muniralsharif)
+ - [Yousef](https://github.com/YousefQwasmeh)
+
