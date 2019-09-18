@@ -25,10 +25,7 @@ class NavBar extends Component {
             />
           </Link>
           <p className="shop">
-            <Link onClick={this.props.resetSearch} to="/shop">
-              {' '}
-              Shop{' '}
-            </Link>
+            <Link to="/shop">Shop</Link>
           </p>
         </section>
         <section className="cart-section">
