@@ -1,4 +1,4 @@
-const getProduct = require('../database/queries/get-all-product.js')
+const getProduct = require('../database/queries/get_all_product.js')
 
 exports.getAllProduct = (request, response) => {
   getProduct()
