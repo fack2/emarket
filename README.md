@@ -25,6 +25,6 @@
 
 
 ### Team Members:
- - (Someya)[https://github.com/someyaaltous]
- - (Munir)[https://github.com/Muniralsharif]
- - (Yousef)[https://github.com/YousefQwasmeh]
+ - [Someya](https://github.com/someyaaltous)
+ - [Munir](https://github.com/Muniralsharif)
+ - [Yousef](https://github.com/YousefQwasmeh)
