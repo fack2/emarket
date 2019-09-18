@@ -57,7 +57,6 @@ class CartPage extends Component {
   }
   componentDidMount() {
     axios.get(`/cart-products`).then(({ data }) => {
-      console.log(data, '000000000000000000000')
       this.setState({ products: data, loading: false })
       const total = data.reduce((a, b) => a + b.total, 0)
       this.setState({ total: total })
