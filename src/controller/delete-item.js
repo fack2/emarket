@@ -1,4 +1,4 @@
-const deleteItem = require('../database/queries/deleteItem')
+const deleteItem = require('../database/queries/delete-item')
 exports.delete = (req, res, next) => {
   const orderID = 1 //
   deleteItem(req.params.id, orderID)
