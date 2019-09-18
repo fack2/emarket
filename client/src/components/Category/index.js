@@ -7,24 +7,10 @@ class Category extends React.Component {
     result: []
   }
   componentDidMount() {
-<<<<<<< HEAD
-    const { history } = this.props
-    axios
-      .get('/category')
-      .then(result => {
-        const resultArray = result.data.map(e => e)
-        this.setState({ result: resultArray })
-      })
-      .catch(response => {
-        console.log(response)
-        history.push('/500')
-      })
-=======
     axios.get('/category').then(result => {
       const resultArray = result.data.map(e => e)
       this.setState({ result: resultArray })
     })
->>>>>>> master
   }
 
   render() {
@@ -38,11 +24,7 @@ class Category extends React.Component {
           />
         ) : (
           this.state.result.map(e => (
-<<<<<<< HEAD
             <Link to={'/shop/' + e.id}>
-=======
-            <Link to={'/shop/' + e.id} key={e.id}>
->>>>>>> master
               <div onClick={this.props.onClick}>
                 <img
                   className="grid-item"

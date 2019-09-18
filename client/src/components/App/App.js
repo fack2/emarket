@@ -3,11 +3,11 @@ import './App.css'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Home from '../Home'
 import Shop from '../Shop'
-import Register from '../register'
+import Register from '../Register'
 import ProductPage from '../Product_page'
-import shipping_info from '../shipping_info'
-import cartPage from '../cart_page'
-import about_us from '../about_us'
+import Shipping_info from '../Shipping_info'
+import Cart_page from '../Cart_page'
+import About_us from '../About_us'
 
 class App extends Component {
   state = {
@@ -28,9 +28,9 @@ class App extends Component {
           <Route exact path="/register" component={Register} />
           <Route path="/product/:id" component={ProductPage} />
           <Route path="/search/:searchInput" component={Shop} />
-          <Route exact path="/shipping_info" component={shipping_info} />
-          <Route exact path="/cart" component={cartPage} />
-          <Route exact path="/about_us" component={about_us} />
+          <Route exact path="/shipping_info" component={Shipping_info} />
+          <Route exact path="/cart" component={Cart_page} />
+          <Route exact path="/about_us" component={About_us} />
         </div>
       </Router>
     )
