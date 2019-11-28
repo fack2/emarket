@@ -7,7 +7,7 @@ class SearchBar extends Component {
     const { searchInput } = this.props
     const { id } = this.props.match.params
     if (searchInput) {
-      axios.get(`/search/${searchInput + 'id' + id}`).then(({ data }) => {
+      axios.get(`/api/search/${searchInput + 'id' + id}`).then(({ data }) => {
         this.props.serchArray(data)
       })
     }

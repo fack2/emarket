@@ -20,7 +20,7 @@ class Register extends Component {
   registerButton = (event) => {
     event.preventDefault()
     axios
-      .post('/register', {
+      .post('/api/register', {
         username: this.state.username,
         email: this.state.email,
         password: this.state.password,

@@ -13,11 +13,11 @@ class ProductCard extends React.Component {
   componentDidMount() {
     this.setState({path1:this.props.path})
     if (this.props.match.params.id) {
-      axios.get(`/shop/${this.props.match.params.id}`).then(({ data }) => {
+      axios.get(`/api/shop/${this.props.match.params.id}`).then(({ data }) => {
         this.setState({ products: data, loading: false })
       })
     } else {
-      axios.get('/shop').then(({ data }) => {
+      axios.get('/api/shop').then(({ data }) => {
         this.setState({ products: data, loading: false })
       })
     }

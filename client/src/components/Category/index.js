@@ -7,7 +7,7 @@ class Category extends React.Component {
     result: []
   };
   componentDidMount() {
-    axios.get("/category").then(result => {
+    axios.get("/api/category").then(result => {
       const resultArray = result.data.map(e => e);
       this.setState({ result: resultArray });
     });

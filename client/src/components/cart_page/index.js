@@ -32,7 +32,7 @@ class CartPage extends Component {
     }).then(result => {
       if (result.value) {
         axios
-          .get(`/delete/${name}`)
+          .get(`/api/delete/${name}`)
           .then(res => {
             Swal.fire(
               'Deleted!',
@@ -56,7 +56,7 @@ class CartPage extends Component {
     })
   }
   componentDidMount() {
-    axios.get(`/cart-products`).then(({ data }) => {
+    axios.get(`/api/cart-products`).then(({ data }) => {
       console.log(data, '000000000000000000000')
       this.setState({ products: data, loading: false })
       const total = data.reduce((a, b) => a + b.total, 0)

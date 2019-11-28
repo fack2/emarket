@@ -15,7 +15,7 @@ class AddQuantityCart extends Component {
       price: this.props.price
     }
     axios
-      .post('/add-to-cart', productInfo)
+      .post('/api/add-to-cart', productInfo)
       .then(response => {
         swal({
           title: 'added to cart',

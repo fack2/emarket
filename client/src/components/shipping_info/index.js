@@ -21,7 +21,7 @@ class shippingInfo extends Component {
     const { username, phone, Address, Extra_Note } = this.state;
 
     axios
-      .post("/shipping_info", { username, phone, Address, Extra_Note })
+      .post("/api/shipping_info", { username, phone, Address, Extra_Note })
       .then(res => {
         if (res.data) {
           swal({

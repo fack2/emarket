@@ -13,7 +13,7 @@ class ProductInfo extends Component {
 
   componentDidMount() {
     axios
-      .get(`/product/${this.props.id}`)
+      .get(`/api/product/${this.props.id}`)
       .then(response => {
         this.setState({ product: response.data.product[0] })
         if (this.props.price === 0)
