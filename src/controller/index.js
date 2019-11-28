@@ -20,7 +20,8 @@ router.get('/product/:id', getProduct.get)
 router.post('/register', register.post)
 router.get('/cart-products', getCartProdusts.getProducts)
 router.get('/delete/:id', deleteItem.delete)
-if (login) {
+// login true temp /////////////////////////////////////////////////////////
+if (login||true) {
   router.post('/shipping_info', add_order)
   router.post('/add-to-cart', addToCart.post)
 } else {
